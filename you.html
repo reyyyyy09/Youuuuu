@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For My Love</title>
+    <title>Will You Be Mine?</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -17,40 +17,72 @@
             font-size: 50px;
             margin-bottom: 20px;
         }
+        img {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
         p {
             font-size: 24px;
-            line-height: 1.5;
-            color: #555;
+            margin-bottom: 40px;
         }
-        .heart {
-            font-size: 100px;
-            color: #e91e63;
-            animation: beat 1s infinite;
-        }
-        @keyframes beat {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.2);
-            }
-        }
-        .footer {
-            margin-top: 50px;
+        button {
             font-size: 20px;
-            color: #888;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .yes {
+            background-color: #4caf50;
+            color: white;
+        }
+        .no {
+            background-color: #f44336;
+            color: white;
+            position: relative;
+        }
+        .message {
+            margin-top: 30px;
+            font-size: 28px;
+            font-weight: bold;
+            display: none;
         }
     </style>
 </head>
 <body>
-    <h1>For My Love</h1>
-    <p>Dear [Nama Pacar],</p>
-    <p>You make my heart beat faster, my days brighter, and my life fuller. I love you more than words can express.</p>
-    <p class="heart">❤️</p>
-    <p>Every moment with you is a treasure, and I can't wait to spend the rest of my life with you.</p>
-    <div class="footer">
-        With all my love,<br>
-        [Nama Kamu]
-    </div>
+
+    <h1>Will You Be My Girlfriend?</h1>
+
+    <!-- Ganti URL ini dengan URL foto pacar kamu -->
+    <img src="panya.jpg" alt="panya">
+
+    <p>Dear Vanya, kamu adalah seseorang yang membuat hari-hariku lebih cerah dan hidupku lebih indah. Maukah kamu menjadi pacarku?</p>
+
+    <button class="yes" onclick="showYes()">Yes</button>
+    <button class="no" id="noBtn" onmouseover="moveNo()">No</button>
+
+    <div id="messageYes" class="message" style="color: #4caf50;">Yay! Aku sangat bahagia! Let's create wonderful memories together! ❤️</div>
+    <div id="messageNo" class="message" style="color: #f44336;">Oh no! Tapi aku akan tetap berjuang untuk mendapatkan hatimu! 😢</div>
+
+    <script>
+        function showYes() {
+            document.getElementById('messageYes').style.display = 'block';
+            document.getElementById('messageNo').style.display = 'none';
+        }
+
+        function moveNo() {
+            var noBtn = document.getElementById('noBtn');
+            var x = Math.floor(Math.random() * window.innerWidth);
+            var y = Math.floor(Math.random() * window.innerHeight);
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+        }
+    </script>
+
 </body>
 </html>
